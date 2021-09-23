@@ -16,7 +16,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 Text(dogFact)
-                    .padding()
+                Spacer()
                 Button(action: fetch, label: {
                     Text("Press to get a doggo fact 🐶")
                         .foregroundColor(.white)
@@ -28,12 +28,12 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .padding(100)
             }
+            .padding(100)
         }
     }
     
     func fetch(){
         NetworkManager.shared.getBankList { (result) in
-            print("cia \(result)")
             switch result {
             case .success(let response):
                 dogFact = response[0].fact ?? "Something went wrong"

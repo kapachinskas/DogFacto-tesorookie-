@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		974DD94A26FC693100B1FEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974DD94926FC693100B1FEEF /* Assets.xcassets */; };
 		974DD94D26FC693100B1FEEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974DD94C26FC693100B1FEEF /* Preview Assets.xcassets */; };
 		974DD95026FC693100B1FEEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974DD94E26FC693100B1FEEF /* LaunchScreen.storyboard */; };
+		974DD95926FC6AF300B1FEEF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 974DD95826FC6AF300B1FEEF /* Alamofire */; };
+		974DD95B26FC6CC000B1FEEF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DD95A26FC6CC000B1FEEF /* NetworkManager.swift */; };
+		974DD95D26FC6D2800B1FEEF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DD95C26FC6D2800B1FEEF /* Response.swift */; };
+		974DD96226FC6E0300B1FEEF /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 974DD96126FC6E0300B1FEEF /* ObjectMapper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,8 @@
 		974DD94C26FC693100B1FEEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		974DD94F26FC693100B1FEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		974DD95126FC693100B1FEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		974DD95A26FC6CC000B1FEEF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		974DD95C26FC6D2800B1FEEF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974DD96226FC6E0300B1FEEF /* ObjectMapper in Frameworks */,
+				974DD95926FC6AF300B1FEEF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +66,9 @@
 			children = (
 				974DD94326FC692F00B1FEEF /* AppDelegate.swift */,
 				974DD94526FC692F00B1FEEF /* SceneDelegate.swift */,
-				974DD94726FC692F00B1FEEF /* ContentView.swift */,
+				974DD96426FC708600B1FEEF /* Services */,
+				974DD96326FC708000B1FEEF /* Model */,
+				974DD96526FC708F00B1FEEF /* Views */,
 				974DD94926FC693100B1FEEF /* Assets.xcassets */,
 				974DD94E26FC693100B1FEEF /* LaunchScreen.storyboard */,
 				974DD95126FC693100B1FEEF /* Info.plist */,
@@ -73,6 +83,30 @@
 				974DD94C26FC693100B1FEEF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		974DD96326FC708000B1FEEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				974DD95C26FC6D2800B1FEEF /* Response.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		974DD96426FC708600B1FEEF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				974DD95A26FC6CC000B1FEEF /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		974DD96526FC708F00B1FEEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				974DD94726FC692F00B1FEEF /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +125,10 @@
 			dependencies = (
 			);
 			name = DogFacto;
+			packageProductDependencies = (
+				974DD95826FC6AF300B1FEEF /* Alamofire */,
+				974DD96126FC6E0300B1FEEF /* ObjectMapper */,
+			);
 			productName = DogFacto;
 			productReference = 974DD94026FC692F00B1FEEF /* DogFacto.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +156,10 @@
 				Base,
 			);
 			mainGroup = 974DD93726FC692F00B1FEEF;
+			packageReferences = (
+				974DD95726FC6AF300B1FEEF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				974DD96026FC6E0300B1FEEF /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+			);
 			productRefGroup = 974DD94126FC692F00B1FEEF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,9 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974DD95B26FC6CC000B1FEEF /* NetworkManager.swift in Sources */,
 				974DD94426FC692F00B1FEEF /* AppDelegate.swift in Sources */,
 				974DD94626FC692F00B1FEEF /* SceneDelegate.swift in Sources */,
 				974DD94826FC692F00B1FEEF /* ContentView.swift in Sources */,
+				974DD95D26FC6D2800B1FEEF /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +389,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		974DD95726FC6AF300B1FEEF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+		974DD96026FC6E0300B1FEEF /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		974DD95826FC6AF300B1FEEF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 974DD95726FC6AF300B1FEEF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		974DD96126FC6E0300B1FEEF /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 974DD96026FC6E0300B1FEEF /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 974DD93826FC692F00B1FEEF /* Project object */;
 }
